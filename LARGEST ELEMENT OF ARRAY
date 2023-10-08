@@ -1,0 +1,30 @@
+//program in C to get the largest element of an array using the function.
+#include<stdio.h>
+int large(int arr[], int n) {
+    int max = arr[0];
+    for(int i = 0; i < n; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+int main() {
+    int arr[5];
+    int count;
+    printf("\nIf YES press 1.");
+    while(1) {
+    printf("\nDo you want to continue: ");
+    scanf("%d", &count);
+    if(count != 1) {
+        break;
+    }
+    printf("\n\nEnter array with 5 elements: ");
+    for(int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
+    int max = large(arr, 5);
+    printf("Largest element of the array: %d\n", max);
+    }
+    return 0;
+}
