@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<time.h>
+int game(char you, char computer)   {
+    if(you==computer) 
+    return 0;
+
+    if(you=='s'&& computer=='p')
+    return 1;
+        else if(you=='p'&&computer=='s')
+        return -1;
+        if(you=='s'&&computer=='z')
+        return -1;
+        else if(you=='z'&&computer=='s') 
+        return 1;
+        if (you == 'p' && computer == 'z')
+		return 1;
+        else if (you == 'z' && computer == 'p')
+		return -1;
+}
+int main() {
+    int n;
+    char you, result, computer;
+    srand(time(NULL));
+    n=rand()%100;
+    if(n<33)
+    computer='s';
+    else if (n>33&&n<66)
+    computer='p';
+    else
+    computer='z';
+    printf("\t\t\t\t\t\t\t\tEnter S for stone, p for paper, z for sizzor: ");
+    scanf("%c",&you);
+    result=game(you, computer);
+    if(result==-1)
+    printf("\t\t\t\t\t\t\t\tGame is draw!!");
+    else if (result==1)
+    printf("\t\t\t\t\t\t\t\tYou won!!");
+    else{
+        printf("\t\t\t\t\t\t\t\tYou lost!!");
+    }
+    printf("you choose %c and computer choose %c",you, computer);
+    return 0;
+}
