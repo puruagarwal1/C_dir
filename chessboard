@@ -1,0 +1,29 @@
+//JALAJ SINGHAL
+//11.09.2023
+//CHESSBOPARDGAME
+#include <stdio.h>
+char* chessboardGame(int x, int y) 
+{
+    if ((x % 4 == 1 || x % 4 == 2) && (y % 4 == 1 || y % 4 == 2)) 
+    {
+        return "Second";
+    } else 
+    {
+        return "First";
+    }
+}
+int main() 
+{
+    int t; 
+    scanf("%d", &t);
+    while (t!=0) 
+    {
+        int x, y; 
+        scanf("%d %d", &x, &y);
+        char* result = chessboardGame(x, y);
+        printf("%s\n", result);
+        t--;
+    }
+
+    return 0;
+}
